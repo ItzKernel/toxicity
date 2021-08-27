@@ -68,7 +68,6 @@ module.exports = class Toxicity extends Plugin {
         powercord.api.commands.registerCommand(
             {
                 command: "uwuify",
-                description: "",
                 description: "Makes youw sententse look like a tsewtified fuwwy wwote it >~<",
                 usage: "{c} [text]",
                 executor: args => {
@@ -89,7 +88,6 @@ module.exports = class Toxicity extends Plugin {
                         "owo",
                         "úwú",
                         ">w<",
-                        "♥w♥",
                         "\\♥w\\♥",
                         "✧w✧",
                         "^w^",
