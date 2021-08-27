@@ -99,6 +99,8 @@ module.exports = class Toxicity extends Plugin {
                     ]
 
 
+                    resultText = resultText.replaceAll("cute", "Ԅ");
+                    resultText = resultText.replaceAll("ent", "ehnt");
                     resultText = resultText.replaceAll("uck", "awk");
                     resultText = resultText.replaceAll("tch", "s");
                     resultText = resultText.replaceAll("cock", "cawk");
@@ -108,7 +110,8 @@ module.exports = class Toxicity extends Plugin {
                     resultText = resultText.replaceAll("ll", "ww");
                     resultText = resultText.replaceAll("ss", "fh");
                     resultText = resultText.replaceAll("r", "w");
-                    resultText = resultText.replaceAll("c", "w");
+                    resultText = resultText.replaceAll("c", "ts");
+                    resultText = resultText.replaceAll("Ԅ", "cuteh");
                     resultText += " " + uwus[[Math.floor(Math.random()*uwus.length)]];
 
                     return {
