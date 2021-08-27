@@ -1,3 +1,8 @@
+/*
+    This is the tastiest spaghetti of all time
+    -ItzKernel
+*/
+
 const { Plugin } = require('powercord/entities');
 
 module.exports = class Toxicity extends Plugin {
@@ -96,23 +101,22 @@ module.exports = class Toxicity extends Plugin {
                         "x3",
                         "QwQ",
                         "-W-",
-                    ]
+                    ];
 
-
-                    resultText = resultText.replaceAll("cute", "Ԅ");
-                    resultText = resultText.replaceAll("ent", "ehnt");
-                    resultText = resultText.replaceAll("uck", "awk");
-                    resultText = resultText.replaceAll("tch", "s");
-                    resultText = resultText.replaceAll("cock", "cawk");
-                    resultText = resultText.replaceAll("app", "awp");
-                    resultText = resultText.replaceAll("this", "thiws");
-                    resultText = resultText.replaceAll("ow", "aw");
-                    resultText = resultText.replaceAll("ll", "ww");
-                    resultText = resultText.replaceAll("ss", "fh");
-                    resultText = resultText.replaceAll("r", "w");
-                    resultText = resultText.replaceAll("c", "ts");
-                    resultText = resultText.replaceAll("Ԅ", "cuteh");
-                    resultText += " " + uwus[[Math.floor(Math.random()*uwus.length)]];
+                    resultText = resultText.replaceAll(/cute/ig, "Ԅ");
+                    resultText = resultText.replaceAll(/ent/ig, "ehnt");
+                    resultText = resultText.replaceAll(/uck/ig, "awk");
+                    resultText = resultText.replaceAll(/tch/ig, "s");
+                    resultText = resultText.replaceAll(/cock/ig, "cawk");
+                    resultText = resultText.replaceAll(/app/ig, "awp");
+                    resultText = resultText.replaceAll(/this/ig, "thiws");
+                    resultText = resultText.replaceAll(/ow/ig, "aw");
+                    resultText = resultText.replaceAll(/ll/ig, "ww");
+                    resultText = resultText.replaceAll(/ss/ig, "fh");
+                    resultText = resultText.replaceAll(/r/ig, "w");
+                    resultText = resultText.replaceAll(/c/ig, "ts");
+                    resultText = resultText.replaceAll(/Ԅ/ig, "cuteh");
+                    resultText += " " + uwus[Math.floor(Math.random()*uwus.length)];
 
                     return {
                         send: true,
