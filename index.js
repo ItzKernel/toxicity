@@ -90,6 +90,7 @@ module.exports = class Toxicity extends Plugin {
                         "úwú",
                         ">w<",
                         "♥w♥",
+                        "\\♥w\\♥",
                         "✧w✧",
                         "^w^",
                         ">~<",
