@@ -152,6 +152,36 @@ module.exports = class Toxicity extends Plugin {
                 }
             }
         );
+        powercord.api.commands.registerCommand(
+            {
+                command: "space",
+                description: "s p a c e s   t e x t",
+                usage: "{c} [text]",
+                executor: args => {
+                    args.pop(); args.pop();
+                    if(args.length == 0) {
+                        return {
+                            send: false,
+                            result: "Usage: `.space [text]`"
+                        }
+                    }
+                    console.log(args);
+
+                    let inText = args.join(" ");
+                    let resultText = "";
+
+                    let index = 0;
+                    for(let char of inText) {
+                        resultText += char + " "
+                        index += 1;
+                    }
+                    return {
+                        send: true,
+                        result: resultText
+                    }
+                }
+            }
+        );
     }
 
     pluginWillUnload() {
@@ -159,5 +189,6 @@ module.exports = class Toxicity extends Plugin {
         powercord.api.settings.unregisterCommand('clap');
         powercord.api.settings.unregisterCommand('uwuify');
         powercord.api.settings.unregisterCommand('b');
+        powercord.api.settings.unregisterCommand('space');
     }
 };
