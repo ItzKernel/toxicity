@@ -65,10 +65,64 @@ module.exports = class Toxicity extends Plugin {
                 }
             }
         );
+        powercord.api.commands.registerCommand(
+            {
+                command: "uwuify",
+                description: "",
+                usage: "{c} [text]",
+                executor: args => {
+                    args.pop(); args.pop();
+                    if(args.length == 0) {
+                        return {
+                            send: false,
+                            result: "Usage: `.uwuify [text]`"
+                        }
+                    }
+                    console.log(args);
+
+                    let inText = args.join(" ");
+                    let resultText = inText;
+
+                    let uwus = [
+                        "uwu",
+                        "owo",
+                        "úwú",
+                        ">w<",
+                        "♥w♥",
+                        "✧w✧",
+                        "^w^",
+                        ">~<",
+                        ":3",
+                        "x3",
+                        "QwQ",
+                        "-W-",
+                    ]
+
+
+                    resultText = resultText.replaceAll("uck", "awk");
+                    resultText = resultText.replaceAll("tch", "s");
+                    resultText = resultText.replaceAll("cock", "cawk");
+                    resultText = resultText.replaceAll("app", "awp");
+                    resultText = resultText.replaceAll("this", "thiws");
+                    resultText = resultText.replaceAll("ow", "aw");
+                    resultText = resultText.replaceAll("ll", "ww");
+                    resultText = resultText.replaceAll("ss", "fh");
+                    resultText = resultText.replaceAll("r", "w");
+                    resultText = resultText.replaceAll("c", "w");
+                    resultText += " " + uwus[[Math.floor(Math.random()*uwus.length)]];
+
+                    return {
+                        send: true,
+                        result: resultText
+                    }
+                }
+            }
+        );
     }
 
     pluginWillUnload() {
         powercord.api.settings.unregisterCommand('woke');
         powercord.api.settings.unregisterCommand('clap');
+        powercord.api.settings.unregisterCommand('uwuify');
     }
 };
