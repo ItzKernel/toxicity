@@ -69,6 +69,7 @@ module.exports = class Toxicity extends Plugin {
             {
                 command: "uwuify",
                 description: "",
+                description: "Makes youw sententse look like a tsewtified fuwwy wwote it >~<",
                 usage: "{c} [text]",
                 executor: args => {
                     args.pop(); args.pop();
