@@ -10,6 +10,12 @@ module.exports = class Toxicity extends Plugin {
                 usage: "{c} [text]",
                 executor: args => {
                     args.pop(); args.pop();
+                    if(args.length == 0) {
+                        return {
+                            send: false,
+                            result: "Usage: `.woke [text]`"
+                        }
+                    }
                     console.log(args);
 
                     let inText = args.join(" ");
@@ -32,9 +38,37 @@ module.exports = class Toxicity extends Plugin {
                 }
             }
         );
+        powercord.api.commands.registerCommand(
+            {
+                command: "clap",
+                description: "👏i👏wanna👏die👏",
+                usage: "{c} [text]",
+                executor: args => {
+                    args.pop(); args.pop();
+                    if(args.length == 0) {
+                        return {
+                            send: false,
+                            result: "Usage: `.clap [text]`"
+                        }
+                    }
+                    console.log(args);
+
+                    let resultText = "";
+                    resultText += "👏";
+                    for(let i = 0; i < args.length; i++) {
+                        resultText += args[i] + "👏";
+                    }
+                    return {
+                        send: true,
+                        result: resultText
+                    }
+                }
+            }
+        );
     }
 
     pluginWillUnload() {
         powercord.api.settings.unregisterCommand('woke');
+        powercord.api.settings.unregisterCommand('clap');
     }
 };
