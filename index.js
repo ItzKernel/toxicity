@@ -118,11 +118,39 @@ module.exports = class Toxicity extends Plugin {
                 }
             }
         );
+        powercord.api.commands.registerCommand(
+            {
+                command: "b",
+                description: "Replaces every 'B' letter to 🅱",
+                usage: "{c} [text]",
+                executor: args => {
+                    args.pop(); args.pop();
+                    if(args.length == 0) {
+                        return {
+                            send: false,
+                            result: "Usage: `.b [text]`"
+                        }
+                    }
+                    console.log(args);
+
+                    let inText = args.join(" ");
+                    let resultText = inText;
+
+                    resultText = resultText.replaceAll("b", "🅱");
+
+                    return {
+                        send: true,
+                        result: resultText
+                    }
+                }
+            }
+        );
     }
 
     pluginWillUnload() {
         powercord.api.settings.unregisterCommand('woke');
         powercord.api.settings.unregisterCommand('clap');
         powercord.api.settings.unregisterCommand('uwuify');
+        powercord.api.settings.unregisterCommand('b');
     }
 };
