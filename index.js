@@ -114,7 +114,7 @@ module.exports = class Toxicity extends Plugin {
                     resultText = resultText.replaceAll(/ll/ig, "ww");
                     resultText = resultText.replaceAll(/ss/ig, "fh");
                     resultText = resultText.replaceAll(/r/ig, "w");
-                    resultText = resultText.replaceAll(/c/ig, "ts");
+                    resultText = resultText.replaceAll(/m/ig, "ny");
                     resultText = resultText.replaceAll(/Ԅ/ig, "cuteh");
                     resultText += " " + uwus[Math.floor(Math.random()*uwus.length)];
 
