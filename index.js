@@ -146,7 +146,7 @@ module.exports = class Toxicity extends Plugin {
                     let inText = args.join(" ");
                     let resultText = inText;
 
-                    resultText = resultText.replaceAll("b", "🅱");
+                    resultText = resultText.replaceAll(/b/ig, "🅱");
 
                     return {
                         send: true,
